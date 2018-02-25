@@ -37,3 +37,14 @@ if [ ! -z "$MYNETWORKS" ]; then
 else
 	postconf -e "mynetworks=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12"
 fi
+
+
+#rewrite email destinations
+
+if [ ! -z "$REWRITE" ]; then
+
+	echo $REWRITE > /etc/postfix/rewrite
+	postconf /etc/postfix/rewrite
+
+        postconf -e "recipient_canonical_maps = regexp:/etc/postfix/rewrite"
+fi
