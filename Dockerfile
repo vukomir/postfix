@@ -3,7 +3,7 @@ FROM alpine:latest
 MAINTAINER Vucomir Ianculov <vukomir@ianculov.ro>
 
 # Install Packages
-RUN true && apk add --no-cache --update postfix supervisor rsyslog bash
+RUN true && apk add --no-cache --update ca-certificates postfix supervisor rsyslog bash
 
 # Clean up to save space
 RUN rm "/tmp/"* 2>/dev/null || true && rm -rf /var/cache/apk/* 2>/dev/null || true
