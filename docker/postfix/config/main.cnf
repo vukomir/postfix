@@ -1,6 +1,6 @@
 smtpd_banner = $myhostname ESMTP $mail_name
 
-myorigin = /etc/mailname
+myorigin = 
 
 biff = no
 

@@ -31,7 +31,7 @@ entries are updated properly if you don't want your emails marked as spam.
 The following configuration options are available:
 ```
 ENV vars
-$HOSTNAME = Postfix myhostname
+$MYORIGIN = Postfix myorigin
 $RELAYHOST = Host that relays your msgs
 $RELAYHOST_USERNAME = An (optional) username for the relay server
 $RELAYHOST_PASSWORD = An (optional) login password for the relay server

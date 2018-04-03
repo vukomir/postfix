@@ -7,6 +7,13 @@ else
 	postconf -# myhostname
 fi
 
+# Set up my origin
+if [ ! -z "$MYORIGIN" ]; then
+	postconf -e myorigin="$MYORIGIN"
+else
+	postconf -e myorigin="$HOSTNAME"
+fi
+
 # Set up a relay host, if needed
 if [ ! -z "$RELAYHOST" ]; then
 	echo -n "- Forwarding all emails to $RELAYHOST"
