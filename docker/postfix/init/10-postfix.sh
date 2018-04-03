@@ -40,9 +40,9 @@ fi
 # Set up my networks to list only networks in the local loopback range
 
 if [ ! -z "$MYNETWORKS" ]; then
-	postconf -e mynetworks=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,$MYNETWORKS
+	postconf -e mynetworks=127.0.0.0/8,$MYNETWORKS
 else
-	postconf -e "mynetworks=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12"
+	postconf -e "mynetworks=127.0.0.0/8"
 fi
 
 
